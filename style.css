@@ -27,34 +27,8 @@ footer {
 
 .book-cover {
     height: 300px;
-	margin-left:20px;
 }
 
 .book-cover:hover {
     opacity: 0.8;
 }
-
-.user-image{
-	padding: 10px;
-    display: inline-block;
-}
-	
-.checked {
-  color: orange;
-}
-
-.rating-system{
-  display: inline; /* the default for span */
-  width: 100px;
-  height: 100px;
-  padding: 5px;
-  margin-left:10px;
-}
-
-section{
-  padding: 5px;
-  margin-left:10px;
- }
- 
-
-
