@@ -1,0 +1,60 @@
+#book-icon {
+    height: 30px;
+}
+
+.container-fluid {
+    margin-top: 15px;
+}
+
+footer {
+    background-color: #212529;
+    color: white;
+    text-align: center;
+    /* positions footer at bottom */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+}
+
+#add-book-form {
+    display: none;
+}
+
+#add-book-button {
+    margin-bottom: 10px;
+}
+
+.book-cover {
+    height: 300px;
+	margin-left:20px;
+}
+
+.book-cover:hover {
+    opacity: 0.8;
+}
+
+.user-image{
+	padding: 10px;
+    display: inline-block;
+}
+	
+.checked {
+  color: orange;
+}
+
+.rating-system{
+  display: inline; /* the default for span */
+  width: 100px;
+  height: 100px;
+  padding: 5px;
+  margin-left:10px;
+}
+
+section{
+  padding: 5px;
+  margin-left:10px;
+ }
+ 
+
+
