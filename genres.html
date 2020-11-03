@@ -19,13 +19,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="books.html">Books</a>
+                    <a class="nav-link" href="books.html">Books</span></a>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown active">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       Discover
                     </a>
@@ -43,28 +43,34 @@
             </ul>
         </div>
     </nav>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-sm">
-                <img src="https://cdn.pixabay.com/photo/2015/11/19/21/10/knowledge-1052010_1280.jpg" class="img-fluid"
-                    alt="Book" />
-            </div>
-            <div class="col-sm">
-                <h1 class="header">How's This Book?</h1>
-                <p>“How’s This book?” is a website with a database served through MySQL in conjunction with
-                    Node.js that allows Oregon State University students (approximately 20,000 Users total) to
-                    publish Ratings for Books . The interface of the website will also allow Users to access details
-                    of Books , such as their Authors and Genres . The primary function of the website is to provide
-                    Users with a hub to store and access their Ratings for Books .</p>
-
-            </div>
+    <div class="container">
+        <h1 class="header">Genres</h1>
+        <p>Select a genre to discover books in that genre</p>
+        <div id="genre-buttons-div">
+            <button type="button" class="btn btn-primary btn-lg genre-button">Science fiction</button>
+            <button type="button" class="btn btn-primary btn-lg genre-button">Fantasy</button>
+            <button type="button" class="btn btn-primary btn-lg genre-button">Mystery</button>
+            <button type="button" class="btn btn-primary btn-lg genre-button">Thriller</button>
+            <button type="button" class="btn btn-primary btn-lg genre-button">Crime</button>
+            <br>
+            <button type="button" class="btn btn-primary btn-lg genre-button">Horror</button>
+            <button type="button" class="btn btn-primary btn-lg genre-button">Historical fiction</button>
+            <button type="button" class="btn btn-primary btn-lg genre-button">Romance</button>
+            <button type="button" class="btn btn-primary btn-lg genre-button">Magical realism</button>
+            <br>
+            <button type="button" class="btn btn-primary btn-lg genre-button">Classic</button>
+            <button type="button" class="btn btn-primary btn-lg genre-button">Nonfiction</button>
+            <button type="button" class="btn btn-primary btn-lg genre-button">Other</button>
         </div>
-    </div>
+        
+        <div class="row no-gutters" id="book-display">
 
-    <footer>
-        <div>Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a>, <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from
-            <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-    </footer>
+        </div>
+
+        <footer>
+            <div>Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a>, <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from
+                <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+        </footer>
 
     <!-- jQuery and JS bundle w/ Popper.js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

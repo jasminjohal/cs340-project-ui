@@ -1,3 +1,4 @@
+/* all */
 #book-icon {
     height: 30px;
 }
@@ -6,17 +7,23 @@
     margin-top: 15px;
 }
 
+.title {
+    margin-top: 15px;
+}
+
 footer {
     background-color: #212529;
     color: white;
     text-align: center;
     /* positions footer at bottom */
-    position: absolute;
+    position: fixed;
+    left: 0;
     bottom: 0;
     width: 100%;
     padding: 10px;
 }
 
+/* books.html */
 #add-book-form {
     display: none;
 }
@@ -31,4 +38,54 @@ footer {
 
 .book-cover:hover {
     opacity: 0.8;
+}
+
+/* sample-book.html */
+#add-rating-form {
+    background-color: #ecf0f1;
+    padding: 30px;
+    width: 50%;
+}
+
+/* genres.html */
+#genre-buttons-div {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.genre-button {
+    margin: 10px;
+}
+
+/* users.html */
+.user-pic {
+    height: 100px;
+    margin-left: 30px;
+}
+
+.book-cover-small {
+    height: 150px;
+}
+
+/* sample-user.html */
+.rating {
+    padding: 10px;
+}
+
+.review {
+    font-style: italic;
+}
+
+/* account.html */
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* authors.html */
+#author-display {
+    margin-top: 20px;
 }
