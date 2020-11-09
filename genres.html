@@ -46,26 +46,18 @@
     <div class="container">
         <h1 class="header">Genres</h1>
         <p>Select a genre to discover books in that genre</p>
-        <div id="genre-buttons-div">
-            <button type="button" class="btn btn-primary btn-lg genre-button">Science fiction</button>
-            <button type="button" class="btn btn-primary btn-lg genre-button">Fantasy</button>
-            <button type="button" class="btn btn-primary btn-lg genre-button">Mystery</button>
-            <button type="button" class="btn btn-primary btn-lg genre-button">Thriller</button>
-            <button type="button" class="btn btn-primary btn-lg genre-button">Crime</button>
-            <br>
-            <button type="button" class="btn btn-primary btn-lg genre-button">Horror</button>
-            <button type="button" class="btn btn-primary btn-lg genre-button">Historical fiction</button>
-            <button type="button" class="btn btn-primary btn-lg genre-button">Romance</button>
-            <button type="button" class="btn btn-primary btn-lg genre-button">Magical realism</button>
-            <br>
-            <button type="button" class="btn btn-primary btn-lg genre-button">Classic</button>
-            <button type="button" class="btn btn-primary btn-lg genre-button">Nonfiction</button>
-            <button type="button" class="btn btn-primary btn-lg genre-button">Other</button>
-        </div>
         
-        <div class="row no-gutters" id="book-display">
+        <div id="genre-buttons-div"></div>
 
-        </div>
+        <p>Add a genre to expand our current list:</p>
+        <form id="add-genre-form">
+            <p class="lead">Add a genre:</p>
+            <label for="genre">Genre</label>
+            <input type="text" id="genre" placeholder="Enter your genre here">
+            <input type="submit" value="Add Genre" id="add-genre-button" class="btn btn-danger">
+        </form>
+        
+        <div class="row no-gutters" id="book-display"></div>
 
         <footer>
             <div>Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a>, <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from

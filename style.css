@@ -57,6 +57,13 @@ footer {
     margin: 10px;
 }
 
+#add-genre-form {
+    background-color: #ecf0f1;
+    padding: 30px;
+    width: 50%;
+    margin-bottom: 10px;
+}
+
 /* users.html */
 .user-pic {
     height: 100px;
@@ -88,4 +95,12 @@ footer {
 /* authors.html */
 #author-display {
     margin-top: 20px;
+}
+
+
+#add-author-form {
+    background-color: #ecf0f1;
+    padding: 30px;
+    width: 70%;
+    margin-bottom: 10px;
 }

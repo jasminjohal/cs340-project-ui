@@ -1,12 +1,12 @@
 // sample book data
 var books = {
     "books": [
-        {"title": "To Kill a Mockingbird", "author": ["Harper Lee"], "genre": ["Classic", "Historical fiction"], "publisher": "Harper Perennial Modern Classics", "publishYear": 1960, "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1553383690l/2657.jpg"},
-        {"title": "To Sleep in a Sea of Stars", "author": ["Christopher Paolini"], "genre": ["Science fiction", "Fantasy"], "publisher": "Tor Books", "publishYear": 2020, "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1583523112l/48829708.jpg"},
-        {"title": "Siddhartha", "author": ["Hermann Hesse", "Hilda Rosner"], "genre": ["Classic"], "publisher": "New Directions", "publishYear": 1922, "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1428715580l/52036.jpg"},
-        {"title": "Pride and Prejudice", "author": ["Jane Austen"], "genre": ["Classic", "Romance"], "publisher": "Modern Library", "publishYear": 1813, "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1320399351l/1885.jpg"},
-        {"title": "Dracula", "author": ["Bram Stoker"], "genre": ["Classic", "Horror"], "publisher": "Norton", "publishYear": 1897, "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1387151694l/17245.jpg"},
-        {"title": "The Fellowship of the Ring", "author": ["J.R.R. Tolkien"], "genre": ["Classic", "Fantasy"], "publisher": "Ballantine Books", "publishYear": "1954", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1486871542l/3263607._SY475_.jpg"}
+        {"title": "To Kill a Mockingbird", "author": ["Harper Lee"], "genre": ["Classic", "Historical fiction"], "numPages": 324, "publishYear": 1960, "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1553383690l/2657.jpg"},
+        {"title": "To Sleep in a Sea of Stars", "author": ["Christopher Paolini"], "genre": ["Science fiction", "Fantasy"], "numPages": 878, "publishYear": 2020, "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1583523112l/48829708.jpg"},
+        {"title": "Siddhartha", "author": ["Hermann Hesse", "Hilda Rosner"], "genre": ["Classic"], "numPages": 152, "publishYear": 1922, "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1428715580l/52036.jpg"},
+        {"title": "Pride and Prejudice", "author": ["Jane Austen"], "genre": ["Classic", "Romance"], "numPages": 279, "publishYear": 1813, "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1320399351l/1885.jpg"},
+        {"title": "Dracula", "author": ["Bram Stoker"], "genre": ["Classic", "Horror"], "numPages": 488, "publishYear": 1897, "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1387151694l/17245.jpg"},
+        {"title": "The Fellowship of the Ring", "author": ["J.R.R. Tolkien"], "genre": ["Classic", "Fantasy"], "numPages": 527, "publishYear": "1954", "cover": "https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1486871542l/3263607._SY475_.jpg"}
     ]
 };
 
@@ -19,6 +19,19 @@ var users = {
         {"username": "Frankie_Cave", "firstName": "Frankie", "lastName": "Cave", "createDate": "11/01/2020", "booksReviewed": ["To Kill a Mockingbird", "To Sleep in a Sea of Stars", "The Fellowship of the Ring"], "comments": ["Required reading!", "Gripping", "Sam <3"], "ratings": [5, 5, 5], "picture": "img/blank-profile-picture.png"}
     ]
 };
+
+// sample authors data
+var authors = {
+    "authors": [
+        {"authorFirstName": "Harper", "authorLastName": "Lee", "authorCity": "Monroeville", "authorState": "Alabama", "authorCountry": "USA"},
+        {"authorFirstName": "Christopher", "authorLastName": "Paolini", "authorCity": "Los Angeles", "authorState": "California", "authorCountry":"USA"},
+        {"authorFirstName": "Herman", "authorLastName": "Hesse", "authorCity": "Calw", "authorState": "Baden-Württemberg", "authorCountry": "Germany"},
+        {"authorFirstName": "Hilda", "authorLastName": "Rosner", "authorCity": "NULL", "authorState": "NULL", "authorCountry": "NULL"},
+        {"authorFirstName": "Jane", "authorLastName": "Austen", "authorCity": "Steventon", "authorState": "Hampshire", "authorCountry": "England"},
+        {"authorFirstName": "Bram", "authorLastName": "Stoker", "authorCity": "Clontarf", "authorState": "Dublin", "authorCountry": "Ireland"},
+        {"authorFirstName": "J.R.R.", "authorLastName": "Tolkien", "authorCity": "Bloemfontein", "authorState": "Free State", "authorCountry": "South Africa"},
+    ]
+}
 
 var genres = {
     "Science fiction": [],
@@ -96,7 +109,9 @@ function sampleBookDisplay() {
     <ul>
         <li>Title: ${sampleBook["title"]}</li>
         <li>Author(s): ${sampleBook["author"]}</li>
-        <li>Date of Publication: ${sampleBook["publishYear"]}</li>
+        <li>Year of Publication: ${sampleBook["publishYear"]}</li>
+        <li>Number of Pages: ${sampleBook["numPages"]}</li>
+        <li>Genre(s): ${sampleBook["genre"]}</li>
     </ul>`
 
     for (var u = 0; u < users["users"].length; u++) {
@@ -128,9 +143,22 @@ if (sampleBookInfoDiv && sampleBookDisplayDiv) {
     sampleBookDisplay();
 }
 
+
 /* genres.html */
-var genreButtons = document.getElementsByClassName('genre-button');
+var genreButtonsDiv = document.getElementById('genre-buttons-div');
+// var genreButtons = document.getElementsByClassName('genre-button');
+var addGenreForm = document.getElementById('add-genre-form');
 var display = document.getElementById('book-display');
+
+function genreButtonsDisplay() {
+    genreButtonsDiv.innerHTML = '';
+    for (var key in genres) {
+        genreButtonsDiv.innerHTML += `
+        <button type="button" class="btn btn-primary btn-lg genre-button">${key}</button>
+        `
+    }
+    addGenreButtonFunctionality();
+}
 
 function genreDisplay() {
     display.innerHTML = '';
@@ -147,10 +175,25 @@ function genreDisplay() {
     }
 }
 
-if (genreButtons) {
+function addGenre(e) {
+    e.preventDefault();
+    var genreName = document.getElementById("genre").value || "NULL";
+    if (!(genreName in genres)) {
+        genres[genreName] = [];
+    }
+    genreButtonsDisplay();
+}
+
+function addGenreButtonFunctionality() {
+    var genreButtons = document.getElementsByClassName('genre-button');
     for (var i = 0; i < genreButtons.length; i++) {
         genreButtons[i].addEventListener('click', genreDisplay, false);
     }
+}
+
+if (genreButtonsDiv) {
+    genreButtonsDisplay();
+    addGenreForm.addEventListener('submit', addGenre);
 }
 
 /* users.html */
@@ -229,9 +272,6 @@ function sampleUserDisplay() {
                 <p>Rating: ${starRating}</p>
                 <p>Review: <span class='review'>${curReview}</span></p>
             </div>
-            
-            
-            
         </div>
         <hr>
         `;
@@ -247,6 +287,9 @@ if (sampleUserInfoDiv && sampleUserDisplayDiv) {
 
 /* authors.html */
 var authorForm = document.getElementById('author-form');
+var addAuthorForm = document.getElementById('add-author-form');
+var authorTable = document.getElementById('author-table').getElementsByTagName('tbody')[0];
+console.log(authorTable);
 
 function displayAuthors(e) {
     var authorDisplayDiv = document.getElementById('author-display');
@@ -270,6 +313,43 @@ function displayAuthors(e) {
     }
 }
 
-if (authorForm) {
-    authorForm.addEventListener('submit', displayAuthors);
+function authorDisplay() {
+    var numAuthors = authors["authors"].length;
+
+    for (var a = 0; a < numAuthors; a++) {
+        var curAuthor = authors["authors"][a];
+        authorTable.innerHTML += `
+        <tr>
+            <td>${curAuthor["authorFirstName"]}</td>
+            <td>${curAuthor["authorLastName"]}</td>
+            <td>${curAuthor["authorCity"]}</td>
+            <td>${curAuthor["authorState"]}</td>
+            <td>${curAuthor["authorCountry"]}</td>
+        </tr>
+        `
+    }
 }
+
+function addAuthor(e) {
+    authorTable.innerHTML = '';
+    e.preventDefault();
+    var fname = document.getElementById("author-first-name").value || "NULL";
+    var lname = document.getElementById("author-last-name").value || "NULL";
+    var city = document.getElementById("author-city").value || "NULL";
+    var state = document.getElementById("author-state").value || "NULL";
+    var country = document.getElementById("author-country").value || "NULL";
+    var authorData = {"authorFirstName": fname, "authorLastName": lname, "authorCity": city, "authorState": state, "authorCountry": country}
+    authors["authors"].push(authorData);
+    console.log(fname, lname, city);
+    authorDisplay();
+}
+
+
+if (authorForm) {
+    authorDisplay();
+    authorForm.addEventListener('submit', displayAuthors);
+    addAuthorForm.addEventListener('submit', addAuthor);
+}
+
+
+

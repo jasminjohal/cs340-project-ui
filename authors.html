@@ -43,15 +43,57 @@
             </ul>
         </div>
     </nav>
-    <div class="container">
-        <h1 class="header">Authors</h1>
-        <p>Enter an author to view all books written by him/her</p>
-        <form id="author-form">
-            <input type="text" id="author-input" placeholder="J.R.R. Tolkien">
-            <input type="submit" id="author-submit" value="Submit" class="btn btn-primary">
-        </form>
-            
-        <div id="author-display"></div>
+    <div class="container-fluid" style="padding-bottom: 40px;">
+        <div class="row">
+            <div class="col-6">
+                <h1 class="header">Authors</h1>
+                <p>Enter an author to view all books written by him/her</p>
+                <form id="author-form">
+                    <input type="text" id="author-input" placeholder="J.R.R. Tolkien">
+                    <input type="submit" id="author-submit" value="Submit" class="btn btn-primary">
+                </form> 
+                <div id="author-display"></div>
+            </div>
+            <div class="col-4" id="author-info-div">
+                <h1>Author Information</h1>
+                <p>Add an author if he/she doesn't exist in our database:</p>
+                <form id="add-author-form">
+                    <p class="lead">Add an author:</p>
+                    <label for="author-first-name">First Name</label>
+                    <input type="text" id="author-first-name" placeholder="Maya">
+                    <br>
+                    <label for="author-last-name">Last Name</label>
+                    <input type="text" id="author-last-name" placeholder="Angelou">
+                    <br>
+                    <label for="author-city">City</label>
+                    <input type="text" id="author-city" placeholder="St. Louis">
+                    <br>
+                    <label for="author-state">State</label>
+                    <input type="text" id="author-state" placeholder="Missouri">
+                    <br>
+                    <label for="author-country">Country</label>
+                    <input type="text" id="author-country" placeholder="USA">
+                    <br>
+                    <input type="submit" value="Add Author" id="add-author-button" class="btn btn-danger">
+                </form>
+                <table class="table table-hover" id="author-table">
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>City</th>
+                            <th>State/Province</th>
+                            <th>Country</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+                
+            </div>
+        </div>
+        
 
         <footer>
             <div>Icons made by <a href="https://www.flaticon.com/authors/good-ware" title="Good Ware">Good Ware</a>, <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from
