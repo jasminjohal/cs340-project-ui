@@ -6,6 +6,6 @@ This repository is designed to showcase what the user interface will look like f
 
 The website will be built with Node.js and will utilize a MySQL database. Please see below for the entity-relationship diagram and the database schema.
 
-![ERD](img/ERD.png)
+![ERD](img/erd.png)
 
 ![Schema](img/schema.png)
